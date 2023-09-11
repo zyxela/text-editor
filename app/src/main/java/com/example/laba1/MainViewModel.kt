@@ -4,12 +4,11 @@ import android.graphics.Color
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlin.properties.Delegates
 
 class MainViewModel: ViewModel(){
 
-    val text: MutableLiveData<TextDesc> by lazy {
-        MutableLiveData<TextDesc>()
-    }
+    val textSize: MutableLiveData<Float> = MutableLiveData()
 
     fun setScreenColor(view: View){
         view.setBackgroundColor(Color.RED)

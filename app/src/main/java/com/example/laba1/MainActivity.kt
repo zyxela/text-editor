@@ -19,11 +19,9 @@ class MainActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         val txtView = findViewById<TextView>(R.id.owrText)
-        viewModel.text.observe(this){
+        viewModel.textSize.observe(this) {
             txtView.apply {
-                textSize = it.size
-                setTextColor(it.color)
-                
+                textSize = viewModel.textSize.value!!
             }
         }
 

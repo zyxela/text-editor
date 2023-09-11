@@ -14,12 +14,11 @@ class InputDialog(val viewModel: MainViewModel) : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.dialog_view, container, false)
-        with(view) {
-            findViewById<Button>(R.id.apply_number).setOnClickListener {
-                val number = findViewById<TextView>(R.id.number).text.toString().toFloat()
-                viewModel.text.value?.size = number
-            }
+        view.findViewById<Button>(R.id.apply_number).setOnClickListener {
+            val number = view.findViewById<TextView>(R.id.number).text.toString().toFloat()
+            viewModel.textSize.value = number
         }
-        return view
-    }
+
+    return view
+}
 }
