@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laba1.R
 import com.example.laba1.RvAdapter
+import com.example.laba1.view.MainViewModel
 
-class FontDialog:DialogFragment() {
+class FontDialog(val viewModel: MainViewModel, val list: List<String>):DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,7 +20,7 @@ class FontDialog:DialogFragment() {
         val v = inflater.inflate(R.layout.font_dialog, container, false)
         val rc = v.findViewById<RecyclerView>(R.id.rv)
         rc.layoutManager = LinearLayoutManager(v.context)
-        rc.adapter = RvAdapter()
+        rc.adapter = RvAdapter(viewModel, list)
         return v
     }
 }
