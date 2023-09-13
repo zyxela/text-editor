@@ -1,4 +1,4 @@
-package com.example.laba1
+package com.example.laba1.dialogs
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModel
+import com.example.laba1.view.MainViewModel
+import com.example.laba1.R
 
 class InputDialog(val viewModel: MainViewModel) : DialogFragment() {
     override fun onCreateView(
