@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.laba1.R
+import com.example.laba1.dialogs.FontDialog
 import com.example.laba1.dialogs.InputDialog
 import com.example.laba1.dialogs.PaletteDialog
 import com.example.laba1.dialogs.StyleDialog
@@ -60,11 +61,13 @@ class MainActivity : AppCompatActivity() {
 
         val changeScreenColor = findViewById<Button>(R.id.change_screen_color)
         val changeStyle = findViewById<Button>(R.id.change_text_style)
+        val changeFont = findViewById<Button>(R.id.change_font)
+
 
         val inputDialog = InputDialog(viewModel)
         val colorDialog = PaletteDialog(viewModel)
         val styleDialog = StyleDialog(viewModel)
-
+        val fontDialog = FontDialog()
 
 
         changeScreenColor.setOnClickListener {
@@ -79,6 +82,9 @@ class MainActivity : AppCompatActivity() {
             styleDialog.show(supportFragmentManager, "styleDialog")
         }
 
+        changeFont.setOnClickListener {
+            fontDialog.show(supportFragmentManager, "fontDialog")
+        }
     }
 
 }
